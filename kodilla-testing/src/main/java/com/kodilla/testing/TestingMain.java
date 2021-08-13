@@ -6,17 +6,21 @@ import com.kodilla.testing.user.SimpleUser;
 public class TestingMain {
 
     public static void main(String[] args) {
-        Calculator paraLiczb = new Calculator(12, 9);
-        int add = paraLiczb.add();
-        int sub = paraLiczb.subtract();
+        Calculator paraLiczb = new Calculator();
+        int add = paraLiczb.add(12, 9);
+        int sub = paraLiczb.subtract(15 ,7);
 
         System.out.println("Test jednostkowy - dodawanie:");
-        if(add == (paraLiczb.getA()+ paraLiczb.getB())){
+        if(add == 21){
             System.out.println("Test OK");
+        } else {
+            System.out.println("Error");
         }
         System.out.println("Test jednostkowy - odejmowanie:");
-        if(sub == (paraLiczb.getA()- paraLiczb.getB())){
+        if(sub == 8){
             System.out.println("Test OK");
+        } else {
+            System.out.println("Error");
         }
 
 
