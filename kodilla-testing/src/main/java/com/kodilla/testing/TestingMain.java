@@ -6,6 +6,7 @@ import com.kodilla.testing.user.SimpleUser;
 public class TestingMain {
 
     public static void main(String[] args) {
+        /* W komentarzu, abym mógł wykonać dalsze zadania
         Calculator paraLiczb = new Calculator();
         int add = paraLiczb.add(12, 9);
         int sub = paraLiczb.subtract(15 ,7);
@@ -23,6 +24,9 @@ public class TestingMain {
             System.out.println("Error");
         }
 
+
+    }
+         */
 
     }
 }
