@@ -57,7 +57,7 @@ public class ShapeCollectorTestSuite {
         void testRemoveNotExistingFigure(){
             //Given
             Square figure1 = new Square(5);
-            ShapeCollector collection = new ShapeCollector();;
+            ShapeCollector collection = new ShapeCollector();
             //When
             boolean result = collection.removeFigure(figure1);
             //Then
@@ -83,7 +83,7 @@ public class ShapeCollectorTestSuite {
             //When
             Shape figure = collection.getFigure(2);
             //Then
-            Assertions.assertEquals(null, figure);
+            Assertions.assertNull(figure);
         }
         @Test
         void testGetFigureMinusIndex(){
@@ -94,7 +94,7 @@ public class ShapeCollectorTestSuite {
             //When
             Shape figure = collection.getFigure(-3);
             //Then
-            Assertions.assertEquals(null, figure);
+            Assertions.assertNull(figure);
         }
         @Test
         void testShowFigures(){
@@ -122,6 +122,7 @@ public class ShapeCollectorTestSuite {
             //Then
             Assertions.assertEquals("Triangle",name);
         }
+        @Test
         void testFieldGetter(){
             //Given
             Triangle figure = new Triangle(5, 4);
