@@ -2,7 +2,6 @@ package com.kodilla.testing.forum.statistics;
 
 public class StatisticsCalculator {
 
-    Statistics statistics;
     int usersQuantity;
     int postsQuantity;
     int commentsQuantity;
@@ -10,11 +9,8 @@ public class StatisticsCalculator {
     double averageCommentsPerUser;
     double averageCommentsPerPost;
 
-    public StatisticsCalculator(Statistics statistics) {
-        this.statistics = statistics;
-    }
 
-    public void calculateAdvStatistics(){
+    public void calculateAdvStatistics(Statistics statistics){
         this.usersQuantity = statistics.usersNames().size();
         this.postsQuantity = statistics.postsCount();
         this.commentsQuantity = statistics.commentsCount();
