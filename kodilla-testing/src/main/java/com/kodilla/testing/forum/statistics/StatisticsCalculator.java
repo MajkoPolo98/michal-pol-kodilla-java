@@ -2,12 +2,12 @@ package com.kodilla.testing.forum.statistics;
 
 public class StatisticsCalculator {
 
-    int usersQuantity;
-    int postsQuantity;
-    int commentsQuantity;
-    double averagePostPerUser;
-    double averageCommentsPerUser;
-    double averageCommentsPerPost;
+    private int usersQuantity;
+    private int postsQuantity;
+    private int commentsQuantity;
+    private double averagePostPerUser;
+    private double averageCommentsPerUser;
+    private double averageCommentsPerPost;
 
 
     public void calculateAdvStatistics(Statistics statistics){
