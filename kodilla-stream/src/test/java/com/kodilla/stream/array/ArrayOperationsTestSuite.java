@@ -14,4 +14,13 @@ public class ArrayOperationsTestSuite {
         //Then
         assertEquals(3,average);
     }
+    @Test
+    void testGetAverageForEmptyList(){
+        //Given
+        int[] numberTable = {};
+        //When
+        double average = ArrayOperations.getAverage(numberTable);
+        //Then
+        assertEquals(0,average);
+    }
 }
