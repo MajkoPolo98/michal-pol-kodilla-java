@@ -10,9 +10,7 @@ public class Game {
     private int winCount = 0;
 
     public void result(String playerChoice, String computerChoice) {
-        /*if ((playerChoice.equals("3") & computerChoice.equals("1")) ||
-                (playerChoice.equals("1") && computerChoice.equals("2")) ||
-                (playerChoice.equals("2") && computerChoice.equals("3"))) {*/
+
         if (loosingList(playerChoice).contains(Integer.parseInt(computerChoice))){
             //Lose
             System.out.println("Przegrana... Komputer wyrzucił: " + Choices.choices().get(computerChoice));
@@ -42,19 +40,20 @@ public class Game {
         boolean whileBreaker = false;
         List<Integer> loosingList = new LinkedList<>();
         while (!whileBreaker) {
-            loosingList.add(loosingNumber);
-            loosingNumber += 2;
-            if (loosingNumber >= Choices.choices().size()){
+            if (loosingNumber > Choices.choices().size()){
                 loosingNumber -= Choices.choices().size();
             }
             if (loosingNumber == Integer.parseInt(playerChoice)){
                 whileBreaker = true;
+            } else {
+                loosingList.add(loosingNumber);
+                loosingNumber += 2;
             }
         }
         return loosingList;
     }
     public static List winningList(String playerChoice){
-        List<Integer> winningList = new LinkedList<>();
+        List<Integer> winningList;
         winningList = Choices.choices().entrySet().stream().
                 map(n -> n.getKey())
                 .map(n -> Integer.parseInt(n))

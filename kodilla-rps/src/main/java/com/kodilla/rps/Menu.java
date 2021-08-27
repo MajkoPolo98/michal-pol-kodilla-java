@@ -24,11 +24,7 @@ public class Menu {
                         boolean exitContinueGameMenu = false;
                         while (!exitContinueGameMenu) {
                             exitGame = true;
-                            System.out.println("ROCK, PAPER, SCISSORS \nMenu Główne");
-                            System.out.println("c - Kontynuuj grę");
-                            System.out.println("n - Nowa gra");
-                            System.out.println("x - Koniec gry / Powrót do menu głównego");
-                            System.out.println("d - Ustawienia trudności");
+                            mainMenu();
                             String menuChoice = scanner.nextLine();
                             if (menuChoice.equals("c")) {
                                 exitContinueGameMenu = true;

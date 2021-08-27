@@ -9,8 +9,8 @@ public class Computer{
 
     public static String choice(String playerChoice, String difficulty){
         Random random = new Random();
-        String computerChoice = "0";
-        int loseChance = 50;
+        String computerChoice;
+        int loseChance;
         if (difficulty.equals("hard")) {
             loseChance = 90;
         } else if (difficulty.equals("medium")) {
