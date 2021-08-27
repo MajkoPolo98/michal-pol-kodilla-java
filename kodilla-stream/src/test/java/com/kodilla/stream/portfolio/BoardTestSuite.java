@@ -156,7 +156,8 @@ class BoardTestSuite {
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(Task::getCreated)
                 .map(d -> Period.between(d,LocalDate.now()).getDays())
-                .reduce(0,(sum, current) -> sum = sum+current);
+                .mapToInt(i -> i)
+                .average().orElse(0);
         double average = daysSum/taskNumber;
 
         //Then
