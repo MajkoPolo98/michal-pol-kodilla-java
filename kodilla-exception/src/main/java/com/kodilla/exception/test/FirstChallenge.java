@@ -2,16 +2,24 @@ package com.kodilla.exception.test;
 
 public class FirstChallenge {
 
-    public void divide(int a, int b) {
+    public double divide(double a, double b) throws ArithmeticException {
+        if (b == 0) {
+            throw new ArithmeticException();
+        }
+        return a / b;
+    }
+
+    /**
+     * This main can throw an ArithmeticException!!!
+     * @param args
+     */
+    public static void main(String[] args) {
+        FirstChallenge firstChallenge = new FirstChallenge();
         try {
-            System.out.println(a/b);
+            double result = firstChallenge.divide(3, 0);
+            System.out.println(result);
         } catch (ArithmeticException e) {
             System.out.println("Nie dziel przez 0. Błąd: " + e);
         }
-    }
-
-    public static void main(String[] args) {
-        FirstChallenge firstChallenge = new FirstChallenge();
-        firstChallenge.divide(3, 0);
     }
 }
