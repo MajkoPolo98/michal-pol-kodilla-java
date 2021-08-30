@@ -14,7 +14,7 @@ public class Computer{
         if (difficulty.equals("hard")) {
             loseChance = 90;
         } else if (difficulty.equals("medium")) {
-            loseChance = 100;
+            loseChance = 33;
         } else {
             loseChance = 10;
         }
