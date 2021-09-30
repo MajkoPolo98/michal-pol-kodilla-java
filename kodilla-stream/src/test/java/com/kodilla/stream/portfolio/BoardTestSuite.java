@@ -150,15 +150,13 @@ class BoardTestSuite {
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
-        long taskNumber = project.getTaskLists().size();
-        double daysSum = project.getTaskLists().stream()
+        double average = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(Task::getCreated)
                 .map(d -> Period.between(d,LocalDate.now()).getDays())
                 .mapToInt(i -> i)
                 .average().orElse(0);
-        double average = daysSum/taskNumber;
 
         //Then
         assertEquals(10,average);
