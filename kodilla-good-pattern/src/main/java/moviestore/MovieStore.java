@@ -1,8 +1,10 @@
+package moviestore;
+
 import java.util.*;
 import java.lang.*;
 import java.util.stream.Collectors;
 
-class MovieStore {
+public class MovieStore {
 
     public Map<String, List<String>> getMovies() {
         List<String> ironManTranslations = new ArrayList<>();
