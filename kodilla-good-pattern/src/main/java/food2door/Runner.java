@@ -21,9 +21,9 @@ public class Runner {
 
         OrderService orderService = new OrderService();
 
-        OrderRequest orderRequest = new OrderRequest(product, mailService, extraFoodShop, 50);
+        OrderRequest orderRequest = new OrderRequest(product, 50);
 
-        orderService.process(orderRequest);
+        orderService.process(orderRequest, extraFoodShop, mailService);
 
 
 

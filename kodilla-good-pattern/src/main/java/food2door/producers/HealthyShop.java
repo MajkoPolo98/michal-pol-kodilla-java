@@ -18,9 +18,9 @@ public class HealthyShop implements ProducerService {
         boolean isOrdered = orderRequest.getQuantity() <= products.get(orderRequest.getProduct());
 
         if (isOrdered) {
-            informationService.inform(orderRequest, true);
+            informationService.inform(orderRequest, true, getProducerName());
         } else {
-            informationService.inform(orderRequest, false);
+            informationService.inform(orderRequest, false, getProducerName());
         }
         return new OrderDto(orderRequest, isOrdered);
     }
