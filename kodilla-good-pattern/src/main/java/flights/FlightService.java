@@ -8,8 +8,6 @@ import java.util.stream.Collectors;
 public class FlightService {
     private HashSet<Flight> flights = new HashSet<>();
 
-
-
     public void addFlight(Flight flight){
         this.flights.add(flight);
     }
