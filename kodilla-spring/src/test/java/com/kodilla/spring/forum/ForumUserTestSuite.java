@@ -21,4 +21,6 @@ public class ForumUserTestSuite {
         //Then
         assertEquals("John Smith", result);
     }
+
+
 }
