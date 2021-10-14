@@ -14,6 +14,7 @@ public class ReaderConfig {
     @Qualifier("book1")
     Book book;
 
+
     @Bean
     public Reader getReader() {
         return new Reader(book);
