@@ -40,7 +40,7 @@ public class LoggerTestSuite {
         Logger logger = Logger.INSTANCE;
         //When
         //Then
-        assertEquals(logger.getLastLog(), "log");
+        assertEquals("log", logger.getLastLog());
     }
 
 
