@@ -1,24 +1,20 @@
 package com.kodilla.hibernate.tasklist;
 
-import com.kodilla.hibernate.task.Task;
+import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.List;
 
 @Entity
-@Table(name = "Task List")
-public final class TaskList {
-
+@Table(name = "TASKSLIST")
+public class TaskList {
     private int id;
     private String listName;
     private String description;
 
-    public TaskList(){
+    public TaskList() {
     }
 
-    public TaskList(int id, String listName, String description){
-        this.id = id;
+    public TaskList(String listName, String description) {
         this.listName = listName;
         this.description = description;
     }
@@ -31,9 +27,17 @@ public final class TaskList {
         return id;
     }
 
-    @Column(name = "LIST NAME")
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Column(name = "LISTNAME")
     public String getListName() {
         return listName;
+    }
+
+    public void setListName(String listName) {
+        this.listName = listName;
     }
 
     @Column(name = "DESCRIPTION")
@@ -41,16 +45,7 @@ public final class TaskList {
         return description;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setListName(String listName) {
-        this.listName = listName;
-    }
-
     public void setDescription(String description) {
         this.description = description;
     }
-
 }
