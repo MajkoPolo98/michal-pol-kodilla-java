@@ -5,11 +5,17 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery(
-        name = "Company.retrieveCompaniesStartingWithLetters",
-        query = "SELECT * FROM COMPANIES WHERE LEFT(COMPANY_NAME, 3) = LEFT(:SEQUENCE, 3)",
-        resultClass = Company.class
-)
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.retrieveCompaniesStartingWithLetters",
+                query = "SELECT * FROM COMPANIES WHERE LEFT(COMPANY_NAME, 3) = LEFT(:SEQUENCE, 3)",
+                resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+                name = "Company.retrieveCompaniesByPartOfName",
+                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT ('%', :SEQUENCE, '%')"
+        )
+})
 
 @Entity
 @Table(name = "COMPANIES")

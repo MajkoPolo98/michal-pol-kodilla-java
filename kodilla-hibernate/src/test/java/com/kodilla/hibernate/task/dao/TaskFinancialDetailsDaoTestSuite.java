@@ -20,6 +20,11 @@ class TaskFinancialDetailsDaoTestSuite {
     private TaskFinancialDetailsDao taskFinancialDetailsDao;
 
     @Test
+    void clean() {
+        taskFinancialDetailsDao.deleteAll();
+    }
+
+    @Test
     void testFindByPaid() {
         //Given
         TaskFinancialDetails taskFinancialDetails =
