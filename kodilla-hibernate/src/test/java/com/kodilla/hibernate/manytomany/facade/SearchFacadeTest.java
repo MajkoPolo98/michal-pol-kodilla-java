@@ -46,6 +46,7 @@ class SearchFacadeTest {
         //Then
         try {
             Assertions.assertEquals(1, companies.size());
+
         } finally {
             companyDao.deleteAll();
             employeeDao.deleteAll();
