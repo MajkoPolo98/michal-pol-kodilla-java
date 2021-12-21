@@ -6,10 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@NamedNativeQuery(
+/*@NamedQuery(
         name = "Employee.retrieveEmployeesWithLastname",
         query = "FROM Employee WHERE lastname = :LASTNAME"
+)*/
+
+@NamedNativeQuery(
+        name = "Employee.retrieveEmployeesWithLastname",
+        query = "SELECT * FROM Employee WHERE lastname = :LASTNAME"
 )
+
 
 
 @Entity
