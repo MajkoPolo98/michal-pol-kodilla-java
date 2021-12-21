@@ -6,15 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/*@NamedQuery(
-        name = "Employee.retrieveEmployeesWithLastname",
-        query = "FROM Employee WHERE lastname = :LASTNAME"
-)*/
 
-@NamedNativeQuery(
-        name = "Employee.retrieveEmployeesWithLastname",
-        query = "SELECT * FROM Employee WHERE lastname = :LASTNAME"
-)
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Employee.retrieveEmployeesWithLastname",
+                query = "SELECT * FROM EMPLOYEES WHERE LASTNAME = :LASTNAME",
+                resultClass = Employee.class
+        ),
+        @NamedNativeQuery(
+                name = "Employee.retrieveEmployeesByPartOfName",
+                query = "SELECT * FROM EMPLOYEES WHERE FIRSTNAME LIKE CONCAT ('%', 'ith', '%') OR LASTNAME LIKE CONCAT ('%', 'ith', '%')",
+                resultClass = Employee.class
+        )
+})
 
 
 

@@ -13,7 +13,8 @@ import java.util.List;
         ),
         @NamedNativeQuery(
                 name = "Company.retrieveCompaniesByPartOfName",
-                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT ('%', :SEQUENCE, '%')"
+                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT ('%', :SEQUENCE, '%')",
+                resultClass = Company.class
         )
 })
 

@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface CompanyDao extends CrudRepository<Company, Integer> {
 
-@Query
+    @Query
     List<Company> retrieveCompaniesStartingWithLetters(@Param("SEQUENCE") String sequence);
 
     @Query
