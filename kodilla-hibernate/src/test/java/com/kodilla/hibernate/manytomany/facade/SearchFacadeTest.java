@@ -67,7 +67,7 @@ class SearchFacadeTest {
         employeeDao.save(lindaKovalsky);
         employeeDao.save(jackSmith);
 
-        List<Employee> employees = searchFacade.findEmployee("J");
+        List<Employee> employees = searchFacade.findEmployee("ith");
 
 
         //Then

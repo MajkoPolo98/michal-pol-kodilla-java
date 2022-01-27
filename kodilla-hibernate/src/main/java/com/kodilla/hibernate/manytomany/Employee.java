@@ -15,7 +15,7 @@ import java.util.List;
         ),
         @NamedNativeQuery(
                 name = "Employee.retrieveEmployeesByPartOfName",
-                query = "SELECT * FROM EMPLOYEES WHERE FIRSTNAME LIKE CONCAT ('%', 'ith', '%') OR LASTNAME LIKE CONCAT ('%', 'ith', '%')",
+                query = "SELECT * FROM EMPLOYEES WHERE FIRSTNAME LIKE CONCAT ('%', :SEQUENCE, '%') OR LASTNAME LIKE CONCAT ('%', :SEQUENCE, '%')",
                 resultClass = Employee.class
         )
 })
