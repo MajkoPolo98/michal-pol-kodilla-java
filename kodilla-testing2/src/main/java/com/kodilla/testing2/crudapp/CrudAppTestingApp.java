@@ -17,7 +17,7 @@ public class CrudAppTestingApp{
         WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
         driver.get("https://majkopolo98.github.io/");
 
-        WebElement searchField = driver.findElement(By.xpath(XPATH_INPUT));
+/*        WebElement searchField = driver.findElement(By.xpath(XPATH_INPUT));
         searchField.sendKeys("New robotic task");
 
         WebElement textareaField = driver.findElement(By.xpath(XPATH_TEXTAREA));
@@ -27,6 +27,20 @@ public class CrudAppTestingApp{
 
         WebElement selectCombo = driver.findElement(By.xpath(XPATH_SELECT));
         Select selectBoard = new Select(selectCombo);
-        selectBoard.selectByIndex(1);
+        selectBoard.selectByIndex(1);*/
+
+        String taskName = "Task number 72033";
+
+        while (!driver.findElement(By.xpath(XPATH_WAIT_FOR)).isDisplayed());
+
+        driver.findElements(
+                        By.xpath("//form[@class=\"datatable__row\"]")).stream()           // [3]
+                .filter(anyForm ->                                             // [4]
+                        anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]")) // [5]
+                                .getText().equals(taskName))                        // [6]
+                .forEach(theForm -> {                                          // [7]
+                    WebElement selectElement = theForm.findElement(By.xpath(".//button[@data-task-delete-button]"));    // [8]
+                    selectElement.click();
+                });
     }
 }
